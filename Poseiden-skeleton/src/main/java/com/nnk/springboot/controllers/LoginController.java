@@ -1,6 +1,8 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.repositories.UserRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,12 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("app")
 public class LoginController {
+    private static final Logger logger = LogManager.getLogger("You are in Login Controler");
 
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("login")
+    @GetMapping("/login")
     public ModelAndView login() {
+        logger.info("method login : login");
         ModelAndView mav = new ModelAndView();
         mav.setViewName("login");
         return mav;

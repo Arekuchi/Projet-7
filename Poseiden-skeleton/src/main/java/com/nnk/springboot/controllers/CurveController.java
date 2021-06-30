@@ -1,6 +1,8 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.CurvePoint;
+import com.nnk.springboot.repositories.CurvePointRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,11 +16,15 @@ import javax.validation.Valid;
 @Controller
 public class CurveController {
     // TODO: Inject Curve Point service
+    @Autowired
+    CurvePointRepository curvePointRepository;
 
     @RequestMapping("/curvePoint/list")
     public String home(Model model)
     {
         // TODO: find all Curve Point, add to model
+        model.addAttribute("curveList", curvePointRepository.findAll());
+
         return "curvePoint/list";
     }
 

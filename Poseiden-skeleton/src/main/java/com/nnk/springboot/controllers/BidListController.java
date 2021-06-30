@@ -1,6 +1,8 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.repositories.BidListRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,29 +16,47 @@ import javax.validation.Valid;
 
 @Controller
 public class BidListController {
+
     // TODO: Inject Bid service
+
+    @Autowired
+    BidListRepository bidListRepository;
 
     @RequestMapping("/bidList/list")
     public String home(Model model)
     {
         // TODO: call service find all bids to show to the view
+
+        model.addAttribute("bidList", bidListRepository.findAll());
+
         return "bidList/list";
     }
 
     @GetMapping("/bidList/add")
     public String addBidForm(BidList bid) {
+
+        bidListRepository.save(bid);
+
         return "bidList/add";
     }
 
     @PostMapping("/bidList/validate")
     public String validate(@Valid BidList bid, BindingResult result, Model model) {
         // TODO: check data valid and save to db, after saving return bid list
+
+
+
+
         return "bidList/add";
     }
 
     @GetMapping("/bidList/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get Bid by Id and to model then show to the form
+
+
+
+
         return "bidList/update";
     }
 
