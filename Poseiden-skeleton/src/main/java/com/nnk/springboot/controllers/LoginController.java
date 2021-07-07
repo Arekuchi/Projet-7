@@ -17,7 +17,7 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/login")
+    @GetMapping("login")
     public ModelAndView login() {
         logger.info("method login : login");
         ModelAndView mav = new ModelAndView();

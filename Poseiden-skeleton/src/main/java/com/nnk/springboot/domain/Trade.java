@@ -1,7 +1,9 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
 import java.sql.Timestamp;
 
 
@@ -13,11 +15,17 @@ public class Trade {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer tradeId;
+    @NotBlank(message = "Account is mandatory")
     public String account;
+    @NotBlank(message = "Type is mandatory")
     public String type;
+    @Min(1)
     public Double buyQuantity;
+    @Min(1)
     public Double sellQuantity;
+    @Positive
     public Double buyPrice;
+    @Positive
     public Double sellPrice;
     public String benchmark;
     public Timestamp tradeDate;
@@ -38,7 +46,7 @@ public class Trade {
     public Trade() {
     }
 
-    public Trade(String account, String type) {
+    public Trade(String account, String type ) {
         this.account = account;
         this.type = type;
     }
