@@ -24,7 +24,7 @@ public class RuleNameController {
     public String home(Model model)
     {
         // TODO: find all RuleName, add to model
-        model.addAttribute("ruleNameList", ruleNameRepository.findAll());
+        model.addAttribute("ruleNames", ruleNameRepository.findAll());
         return "ruleName/list";
     }
 

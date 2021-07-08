@@ -23,7 +23,7 @@ public class TradeController {
     public String home(Model model)
     {
         // TODO: find all Trade, add to model
-        model.addAttribute("tradeList", tradeRepository.findAll());
+        model.addAttribute("trades", tradeRepository.findAll());
         return "trade/list";
     }
 

@@ -23,7 +23,7 @@ public class RatingController {
     public String home(Model model)
     {
         // TODO: find all Rating, add to model
-        model.addAttribute("ratingList", ratingRepository.findAll());
+        model.addAttribute("ratings", ratingRepository.findAll());
         return "rating/list";
     }
 
