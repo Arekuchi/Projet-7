@@ -34,6 +34,12 @@ public class RatingControllerTest {
         this.mockMvc.perform(get("/rating/list")).andExpect(status().isOk());
     }
 
+    @WithMockUser(authorities = "USER")
+    @Test
+    public void testShowRatingUser() throws Exception {
+        this.mockMvc.perform(get("/rating/list")).andExpect(status().isOk());
+    }
+
     @WithMockUser()
     @Test
     public void testShowRating() throws Exception {

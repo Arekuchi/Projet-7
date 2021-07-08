@@ -35,6 +35,12 @@ public class RuleControllerTest {
         this.mockMvc.perform(get("/ruleName/list")).andExpect(status().isOk());
     }
 
+    @WithMockUser(authorities = "USER")
+    @Test
+    public void testShowRuleNameUser() throws Exception {
+        this.mockMvc.perform(get("/ruleName/list")).andExpect(status().isOk());
+    }
+
     @WithMockUser
     @Test
     public void testShowRuleName() throws Exception {
