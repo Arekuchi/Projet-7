@@ -23,7 +23,7 @@ public class CurveController {
     public String home(Model model)
     {
         // TODO: find all Curve Point, add to model
-        model.addAttribute("curveList", curvePointRepository.findAll());
+        model.addAttribute("curvePoint", curvePointRepository.findAll());
 
         return "curvePoint/list";
     }

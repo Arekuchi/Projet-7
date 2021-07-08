@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -25,9 +27,14 @@ public class BidListControllerTest {
 
     @WithMockUser(authorities = "USER")
     @Test
-    public void showBidListTest() throws Exception {
+    public void showBidListTestUser() throws Exception {
         mockMvc.perform(get("/bidList/list")).andExpect(status().isForbidden());
     }
 
+    @WithMockUser(authorities = "ADMIN")
+    @Test
+    public void showBidListTestAdmin() throws Exception {
+        mockMvc.perform(get("/bidList/list")).andExpect(status().isForbidden());
+    }
 
 }
