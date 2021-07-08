@@ -30,6 +30,12 @@ public class BidListControllerTest {
     @Autowired
     BidListRepository bidListRepository;
 
+    @WithMockUser()
+    @Test
+    public void showBidListTest() throws Exception {
+        mockMvc.perform(get("/bidList/list")).andExpect(status().isForbidden());
+    }
+
     @WithMockUser(authorities = "USER")
     @Test
     public void showBidListTestUser() throws Exception {

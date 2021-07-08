@@ -40,6 +40,12 @@ public class CurvePointControllerTest {
         this.mockMvc.perform(get("/curvePoint/list")).andExpect(status().isForbidden());
     }
 
+    @WithMockUser(authorities = "USER")
+    @Test
+    public void testAddCurvePointUser() throws Exception {
+        this.mockMvc.perform(get("/curvePoint/add")).andExpect(status().isOk());
+    }
+
     @WithMockUser(authorities = "ADMIN")
     @Test
     public void testAddCurvePointAdmin() throws Exception {
