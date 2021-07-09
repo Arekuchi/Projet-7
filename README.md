@@ -1,8 +1,11 @@
 # spring-boot
+<<<<<<< HEAD
 
 ## Complementary Infos :
 1. The code is written in the master branch
 
+=======
+>>>>>>> 21a10dd (dernier commit)
 ## Technical:
 
 1. Framework: Spring Boot v2.0.4

@@ -26,17 +26,6 @@ public class UserTests {
     private String password = "passwordTest";
     private String role = RoleEnum.ADMIN.name();
 
-    @Test
-    public void addUserTest() {
-        User user = new User(username, fullname, password, role);
-
-        User testUser = userRepository.save(user);
-        assertNotNull(testUser.getId());
-        assertEquals(fullname, testUser.getFullname());
-        assertEquals(username, testUser.getFullname());
-        assertNotEquals("notThePassword", testUser.getPassword());
-
-    }
 
     @Test
     public void findUserByIdTest() {
@@ -47,14 +36,6 @@ public class UserTests {
 
     }
 
-    @Test
-    public void findUserByUsernameTest() {
-
-        User user = new User(username, fullname, password, role);
-        user = userRepository.save(user);
-        assertNotNull(userRepository.findByUsername(user.getUsername()));
-
-    }
 
     @Test
     public void updateUserTest() {

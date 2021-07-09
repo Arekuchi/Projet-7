@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class CurvePointControllerTest {
 
     @Autowired
-    private MockMvc mockMvc;
+    MockMvc mockMvc;
 
     @Autowired
     private CurvePointRepository curvePointRepository;
@@ -137,7 +137,7 @@ public class CurvePointControllerTest {
     @WithMockUser(authorities = "ADMIN")
     @Test
     public void testDeleteBidListAdmin() throws Exception {
-        CurvePoint curvePoint = curvePointRepository.save(new CurvePoint(42, 10.0d, 10.0d));
+        CurvePoint curvePoint = curvePointRepository.save(new CurvePoint(43, 10.0d, 10.0d));
 
         this.mockMvc.perform(get("/curvePoint/delete/" + curvePoint.getId())).andExpect(status().isFound()).andReturn();
     }

@@ -49,8 +49,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .maximumSessions(1);
 
-        // autorisation des rôles USER et ADMIN
     }
-    
+
 
 }
