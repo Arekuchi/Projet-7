@@ -1,7 +1,7 @@
 # spring-boot
 
 ## Complementary Infos :
-1. The code is written in the branch develop
+1. The code is written in the master develop
 
 ## Technical:
 
