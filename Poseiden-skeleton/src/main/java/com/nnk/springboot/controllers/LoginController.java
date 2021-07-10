@@ -27,6 +27,7 @@ public class LoginController {
 
     @GetMapping("secure/article-details")
     public ModelAndView getAllUserArticles() {
+        logger.info("methode getAllUserArticles : secure/article-details");
         ModelAndView mav = new ModelAndView();
         mav.addObject("users", userRepository.findAll());
         mav.setViewName("user/list");
@@ -35,6 +36,7 @@ public class LoginController {
 
     @GetMapping("error")
     public ModelAndView error() {
+        logger.info("methode error : error");
         ModelAndView mav = new ModelAndView();
         String errorMessage= "You are not authorized for the requested data.";
         mav.addObject("errorMsg", errorMessage);
