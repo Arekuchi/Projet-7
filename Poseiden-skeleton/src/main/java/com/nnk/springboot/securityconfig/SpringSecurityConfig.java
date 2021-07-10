@@ -51,43 +51,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // autorisation des rôles USER et ADMIN
     }
-
-    // TODO : collection/List de role ?
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        List<Role> roles = user.getRole();
-//        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-//
-//        for (Role role : roles) {
-//            authorities.add(new SimpleGrantedAuthority(user.getRole()));
-//        }
-//
-//        return authorities;
-//    }
-
-    // TODO : hasRole ?
-    // @Override
-    //public void configure(HttpSecurity http) throws Exception {
-    //        http
-    //            .authorizeRequests()
-    //            .antMatchers("/admin").hasRole("ADMIN")
-    //            .antMatchers("/user").hasRole("USER")
-    //            .anyRequest().authenticated()
-    //            .and()
-    //            .formLogin();
-    //}
-
-//    @Bean
-//    public BCryptPasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-//
-//    @Bean
-//    public DaoAuthenticationProvider daoAuthenticationProvider(){
-//        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-//        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
-//        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-//        return daoAuthenticationProvider;
-//    }
+    
 
 }
