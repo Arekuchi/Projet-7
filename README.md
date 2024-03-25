@@ -1,5 +1,5 @@
 # spring-boot
-<<<<<<< HEAD
+<<<<<< HEAD
 
 ## Complementary Infos :
 1. The code is written in the master branch
